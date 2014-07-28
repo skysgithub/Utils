@@ -137,29 +137,4 @@ public class FtpSender {
 		return logs.toString();
 	}
 
-	public static void main(String[] args) {
-		String ipAddress = "easonlin1113.no-ip.biz";
-		int port = 13579;
-		String account = "sam";
-		String password = "sam";
-		String directory = "/FTP Upload/Sean upload/";
-		FtpSender sender = new FtpSender(ipAddress, directory, account,
-				password);
-		try {
-			sender.setPort(port);
-			String fileName = "QAZ.txt";
-			byte[] file = "test".getBytes();
-
-			sender.addFile(fileName, file);
-
-			sender.send();
-
-			System.out.println(sender.getLogs());
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(sender.getLogs());
-
-		}
-	}
-
 }
